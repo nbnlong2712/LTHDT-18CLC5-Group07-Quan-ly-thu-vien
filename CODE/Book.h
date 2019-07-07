@@ -6,41 +6,23 @@ using namespace std;
 #include<fstream>
 #include<vector>
 #include<string.h>
+#include"Library.h"
 
 class Book 
 {
 private:
-	string m_category, m_author, m_language, m_origin, m_name;
+	string m_author, m_name;
 	int m_code;
-	int m_amounts;
 	vector<Book*>m_book;
+	Library m_library;
 public:
-	vector<string*>inputName();
-	vector<string*>inputAuthor();
-	vector<string*>inputOrigin();
-	vector<int*>inputAmounts();
-	vector<int*>inputCode();
-	vector<string*>inputCategory();
-	vector<string*>inputLanguage();
-	
-	string setName();
-	string setAuthor();
-	string setOrigin();
-	int setAmounts();
-	int setCode();
-	string setCategory();
-	string setLanguage();
+	void input();
+	void inputLibrary();
 
 	void infoAllBook();
 	
 	string searchNameBook(string k);
-
-	
-
 	void searchAuthorBook(string k);
-	void searchOriginBook(string k);
-	void searchCategoryBook(string k);
-	void searchLanguageBook(string k);
 	void searchCodeBook(int code);
 
 	void infoBook(string k);

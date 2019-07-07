@@ -6,7 +6,7 @@ using namespace std;
 class Date
 {
 protected:
-	int day, month, year;
+	int m_day, m_month, m_year;
 public:
 	void input();
 	void output();
