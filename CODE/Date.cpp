@@ -3,7 +3,6 @@
 
 void Date::input()
 {
-	cout << "Enter day, month, year:";
 	cin >> m_day;
 	cin >> m_month;
 	cin >> m_year;
@@ -76,7 +75,7 @@ void Date::output()
 	cout << m_day << "/" << m_month << "/" << m_year << endl;
 }
 
-void Date::increase_n_days(int day, int month, int year, int n)
+Date Date::increase_n_days(int day, int month, int year, int n)
 {
 	day += n;
 	if ((year % 4 == 0 && year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)) // Leap year
@@ -131,9 +130,13 @@ void Date::increase_n_days(int day, int month, int year, int n)
 			}
 		}
 	}
-	cout << endl << "Your time when increase " << n << " day: " << day << "/" << month << "/" << year << endl;
+	Date k;
+	k.m_day = day;
+	k.m_month = month;
+	k.m_year = year;
+	return k;
 }
-void Date::decrease_n_days(int day, int month, int year, int n1)
+Date Date::decrease_n_days(int day, int month, int year, int n1)
 {
 	int n = n1;
 	if (n < day)
@@ -348,7 +351,11 @@ void Date::decrease_n_days(int day, int month, int year, int n1)
 			}
 		}
 	}
-	cout << endl << "Your time when decrease " << n1 << " day: " << day << "/" << month << "/" << year << endl;
+	Date k;
+	k.m_day = day;
+	k.m_month = month;
+	k.m_year = year;
+	return k;
 }
 
 int Date::compare(Date D1)

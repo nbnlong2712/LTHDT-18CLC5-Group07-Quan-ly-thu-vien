@@ -6,24 +6,21 @@ using namespace std;
 #include<fstream>
 #include<vector>
 #include<string.h>
-#include"Library.h"
+#include"Date.h"
 
-class Book 
+class Book: public Date 
 {
 private:
 	string m_author, m_name;
 	int m_code;
-	vector<Book*>m_book;
-	Library m_library;
 public:
 	void input();
-	void inputLibrary();
+	void dateBorrowed();
+	void dateGiveBack();
 
-	void infoAllBook();
-	
-	string searchNameBook(string k);
-	void searchAuthorBook(string k);
-	void searchCodeBook(int code);
+	string setName();
+	string setAuthor();
+	int setCode();
 
-	void infoBook(string k);
+	void infoBook();
 };

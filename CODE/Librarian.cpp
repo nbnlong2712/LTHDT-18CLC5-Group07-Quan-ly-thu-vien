@@ -9,14 +9,9 @@ void Librarian::inputAddress()
 {
 	Information::inputAddress();
 }
-
-void Librarian::inputLibrary()
-{
-	m_library.inputNameLibrary();
-}
-
 void Librarian::inputContract()
 {
+	cout << "Enter date start contract: ";
 	Date::input();
 }
 
@@ -26,21 +21,20 @@ void Librarian::intputSalary()
 	cin >> m_salary;
 }
 
-void Librarian::extensionContract()
+Date Librarian::extensionContract()
 {
-	int n = 365;
-	m_contract.increase_n_days(m_day, m_month, m_year, n);
+	int n = 180;
+	Date a=m_contract.increase_n_days(m_day, m_month, m_year, n);
+	return a;
 }
 
 void Librarian::info()
 {
 	cout <<"-Name: "<< m_name << endl;
 	cout << "-Adrress: " << m_adr << endl;
-	m_library.print();
 	cout << endl;
 	cout << "-Salary: " << m_salary << endl;
 	cout << "-Start contract: ";
 	this->output();
-	cout << "-End contract: ";
-	this->extensionContract();
+	cout << "-End contract: " << this->extensionContract().setDay() << "/" << this->extensionContract().setMonth() << "/" << this->extensionContract().setYear();
 }
