@@ -24,13 +24,13 @@ void Librarian::intputSalary()
 Date Librarian::extensionContract()
 {
 	int n = 180;
-	Date a=m_contract.increase_n_days(m_day, m_month, m_year, n);
+	Date a = m_contract.increase_n_days(m_day, m_month, m_year, n);
 	return a;
 }
 
 void Librarian::info()
 {
-	cout <<"-Name: "<< m_name << endl;
+	cout << "-Name: " << m_name << endl;
 	cout << "-Adrress: " << m_adr << endl;
 	cout << endl;
 	cout << "-Salary: " << m_salary << endl;

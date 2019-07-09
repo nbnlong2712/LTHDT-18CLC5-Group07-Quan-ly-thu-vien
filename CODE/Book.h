@@ -2,13 +2,12 @@
 #include<iostream>
 using namespace std;
 #include<string>
-#include"Information.h"
 #include<fstream>
 #include<vector>
 #include<string.h>
 #include"Date.h"
 
-class Book: public Date 
+class Book : public Date
 {
 private:
 	string m_author, m_name;

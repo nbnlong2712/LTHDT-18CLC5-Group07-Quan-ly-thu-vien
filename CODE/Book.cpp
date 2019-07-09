@@ -24,6 +24,11 @@ void Book::dateBorrowed()
 	cout << "Enter date borrow: ";
 	Date::input();
 }
+void Book::dateGiveBack()
+{
+	Date a = this->increase_n_days(m_day, m_month, m_year, 60);
+	cout << a.setDay() << "/" << a.setMonth() << "/" << a.setYear();
+}
 
 string Book::setName()
 {
@@ -40,8 +45,6 @@ int Book::setCode()
 	int k = m_code;
 	return k;
 }
-
-
 
 void Book::infoBook()
 {

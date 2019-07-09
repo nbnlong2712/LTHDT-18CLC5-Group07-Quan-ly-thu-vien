@@ -12,10 +12,10 @@ private:
 	double m_salary;
 	Date m_contract;
 public:
-	 void inputName();
-	 void inputAddress();
-	 void intputSalary();
-	 void inputContract();
-	 Date extensionContract();
-	 void info();
+	void inputName();
+	void inputAddress();
+	void intputSalary();
+	void inputContract();
+	Date extensionContract();
+	void info();
 };
