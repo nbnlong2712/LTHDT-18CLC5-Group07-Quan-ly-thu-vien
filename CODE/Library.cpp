@@ -173,37 +173,7 @@ void Library::searchCodeBorrower(int k)
 	if (a == 0)
 		cout << "Khong tim thay!";
 }
-void Library::borowerBook(Borrower &B1, Book B2)
-{
-	for (int i = 0; i < m_borrower.size(); i++)
-	{
-		if (chuan_hoa1(B1.setName()) == chuan_hoa1(m_borrower[i]->setName()))
-		{
-			for (int j = 0; j < m_book.size(); j++)
-			{
-				if (chuan_hoa1(B2.setName()) == chuan_hoa1(m_book[j]->setName()))
-					B1.setBorrowBook().push_back(m_book[j]);
-			}
-		}
-	}
-}
-void Library::giveBackBook(Borrower&B1, Book B2)
-{
-	for (int i = 0; i < m_borrower.size(); i++)
-	{
-		if (chuan_hoa1(B1.setName()) == chuan_hoa1(m_borrower[i]->setName()))
-		{
-			for (int j = 0; j < B1.setBorrowBook().size(); j++)
-			{
-				if (chuan_hoa1(B2.setName()) == chuan_hoa1(B1.setBorrowBook()[j]->setName()))
-				{
-					B1.setBorrowBook()[j] = B1.setBorrowBook().back();
-					B1.setBorrowBook().pop_back();
-				}
-			}
-		}
-	}
-}
+
 void Library::infoBorrower(Borrower B1)
 {
 	for (int i = 0; i < m_borrower.size(); i++)
@@ -222,4 +192,13 @@ void Library::infoBorrower(Borrower B1)
 			else cout << "ko co sach!";
 		}
 	}
+}
+// LIBRARIAN
+void Library::addLibrarian()
+{
+	m_librarian->inputInfo();
+}
+Librarian*Library::setLibrarian()
+{
+	return m_librarian;
 }

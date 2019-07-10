@@ -16,12 +16,15 @@ public:
 	void inputCode();
 	void inputDateCard();
 	void inputInfo();
-	void dateExpire();
+	Date dateExpire();
+	Date extensionDateCard();
 
 	string setName();
 	string setAddress();
 	int setCode();
 	vector<Book*>&setBorrowBook();
+	bool borrowBook(Book*);
+	void giveBackBook(Book*);
 
 	void infoBorrower();
 };

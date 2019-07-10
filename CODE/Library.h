@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include<iostream>
 #include<string>
 #include<vector>
@@ -13,6 +13,7 @@ private:
 	string m_name;
 	vector<Book*>m_book;
 	vector<Borrower*>m_borrower;
+	Librarian*m_librarian;
 public:
 	void inputNameLibrary();
 	void print();
@@ -25,14 +26,15 @@ public:
 	void searchAuthorBook(string k);
 	void searchCodeBook(int);
 // BORROWER
-	vector<Borrower*>addBorrower();
+	vector<Borrower*>addBorrower();            // Hàm này cũng dùng để tạo thẻ thư viện cho một đọc giả
 	vector<Borrower*>setAddBorrower();
 	void infoAllBorrower();
 	void searchNameBorrower(string k);
 	bool searchNameBorrower1(string k);
 	void searchAddressBorrower(string k);
 	void searchCodeBorrower(int);
-	void borowerBook(Borrower&, Book);
-	void giveBackBook(Borrower&, Book);
 	void infoBorrower(Borrower);
+// LIBRARIAN
+	void addLibrarian();
+	Librarian*setLibrarian();
 };

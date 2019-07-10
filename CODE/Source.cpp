@@ -21,7 +21,7 @@ int main()
 {
 	cout << std::setprecision(15);
 
-	Library*L = new Library;
+	//Library*L = new Library;
 	/*int luachon;
 	cout << "nhap lua chon cua ban: ";
 	cin >> luachon;
@@ -110,6 +110,10 @@ int main()
 		}
 	}
 	else exit(0);*/
+	/*L->addBook();
+	L->addBook();
+	L->addBook();
+	L->addBook();
 	L->addBook();
 	L->addBook();
 	L->infoAllBook();
@@ -118,7 +122,7 @@ int main()
 	string*k = new string;
 	cout << "nhap ten doc gia muon muon sach: ";
 	getline(cin, *k);
-	while (L->searchNameBorrower1(*k) != true)
+	while (L->searchNameBorrower1(*k) != true)           // ten doc gia
 	{	
 		cout << "nhap lai ten doc gia: ";
 		getline(cin, *k);
@@ -129,24 +133,74 @@ int main()
 	string*l = new string;
 	cout << "nhap sach muon muon: ";
 	getline(cin, *l);
-	while (L->searchNameBook1(*l) != true)
+	while (L->searchNameBook1(*l) != true)            // ten sach
 	{
-		string*l = new string;
 		cout << "nhap lai ten sach: ";
 		getline(cin, *l);
+		string*l = new string;
 	}
-	for (int i = 0; i < L->setAddBorrower().size(); i++)
+	for (int i = 0; i < L->setAddBorrower().size(); i++)       // cho muon sach
 	{
 		if (chuan_hoa_main(*k) == chuan_hoa_main(L->setAddBorrower()[i]->setName()))
 		{
 			for (int j = 0; j < L->setAddBook().size(); j++)
 			{
 				if (chuan_hoa_main(*l) == chuan_hoa_main(L->setAddBook()[j]->setName()))
-					L->borowerBook(*L->setAddBorrower()[i], *L->setAddBook()[j]);
+					L->setAddBorrower()[i]->borrowBook(L->setAddBook()[j]);
 			}
 		}
 	}
-	for (int i = 0; i < L->setAddBorrower().size(); i++)
+
+	int luachon = 1;
+	while (luachon == 1)
+	{
+		while (L->searchNameBook1(*l) != true)            // ten sach
+		{
+			cout << "nhap lai ten sach: ";
+			getline(cin, *l);
+			string*l = new string;
+		}
+		for (int i = 0; i < L->setAddBorrower().size(); i++)       // cho muon sach
+		{
+			if (chuan_hoa_main(*k) == chuan_hoa_main(L->setAddBorrower()[i]->setName()))
+			{
+				for (int j = 0; j < L->setAddBook().size(); j++)
+				{
+					if (chuan_hoa_main(*l) == chuan_hoa_main(L->setAddBook()[j]->setName()))
+						L->setAddBorrower()[i]->borrowBook(L->setAddBook()[j]);
+				}
+			}
+		}
+		cout << "nhap tiep lua chon: ";
+		cin >> luachon;
+		if (luachon == 1)
+		{
+			cin.ignore();
+			system("cls");
+			string*l = new string;
+			cout << "nhap sach muon muon: ";
+			getline(cin, *l);
+		}
+	}
+	cout << endl << "khi muon: " << endl;
+	for (int i = 0; i < L->setAddBorrower().size(); i++)            // in thong tin
+	{
+		if (chuan_hoa_main(*k) == chuan_hoa_main(L->setAddBorrower()[i]->setName()))
+			L->infoBorrower(*L->setAddBorrower()[i]);
+	}
+	for (int i = 0; i < L->setAddBorrower().size(); i++)             // tra lai sach
+	{
+		if (chuan_hoa_main(*k) == chuan_hoa_main(L->setAddBorrower()[i]->setName()))
+		{
+			for (int j = 0; j < L->setAddBook().size(); j++)
+			{
+				if (chuan_hoa_main(*l) == chuan_hoa_main(L->setAddBook()[j]->setName()))
+					L->setAddBorrower()[i]->giveBackBook(L->setAddBook()[j]);
+			}
+		}
+	}
+	cout << endl << "khi tra: " << endl;
+	for (int i = 0; i < L->setAddBorrower().size(); i++)    // in thong tin
 	{
 		if (chuan_hoa_main(*k) == chuan_hoa_main(L->setAddBorrower()[i]->setName()))
 			L->infoBorrower(*L->setAddBorrower()[i]);
@@ -154,6 +208,38 @@ int main()
 
 	delete l;
 	delete k;
+	delete L;*/
+
+	Library*L = new Library;
+	for (int i = 0; i < 6; i++)
+		L->addBook();
+	cout << endl << "nguoi dung: ";
+	Borrower*K = L->addBorrower()[0];
+
+	for (int i = 0; i < 6; i++)
+	{
+		if (K->borrowBook(L->setAddBook()[i]) == true)
+			cout << "muon thanh cong :)";
+		else cout << "ko muon dc nua!";
+	}
+	L->infoBorrower(*K);
+	int luachon = 1;
+	while (luachon == 1)
+	{
+		cin.ignore();
+		string*k = new string;
+		cout << "nhap sach muon tra: ";
+		getline(cin, *k);
+
+		for (int i = 0; i < L->setAddBook().size(); i++)
+		{
+			if (chuan_hoa_main(*k) == chuan_hoa_main(L->setAddBook()[i]->setName()))
+				K->giveBackBook(L->setAddBook()[i]);
+		}
+		cout << "tra tiep ko (1:co / 0:ko): ";
+		cin >> luachon;
+	}
+	L->infoBorrower(*K);
 	delete L;
 	return 0;
 }
