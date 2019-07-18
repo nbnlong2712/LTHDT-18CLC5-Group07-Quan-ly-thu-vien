@@ -1,59 +1,7 @@
 #include"Date.h"
 
 
-void Date::input()
-{
-	cin >> m_day;
-	cin >> m_month;
-	cin >> m_year;
-	while (m_year < 0)
-	{
-		cout << " - Enter year again: ";
-		cin >> m_year;
-	}
-	while (m_month < 1 || m_month>12)
-	{
-		cout << " - Enter month again: ";
-		cin >> m_month;
-	}
-	while (m_day < 1 || m_day>31)
-	{
-		cout << " - Enter day again: ";
-		cin >> m_day;
-	}
-	if ((m_year % 4 == 0 && m_year % 400 == 0) || (m_year % 4 == 0 && m_year % 100 != 0)) // Leap year
-	{
-		while (m_month == 2 && (m_day < 1 || m_day>29))
-		{
-			cout << " - Enter day again: ";
-			cin >> m_day;
-		}
-	}
-	else if ((m_year % 4 == 0 && m_year % 100 == 0 && m_year % 400 != 0) || m_year % 4 != 0)   // Normal year
-	{
-		while (m_month == 2 && (m_day < 1 || m_day>28))
-		{
-			cout << " - Enter day again: ";
-			cin >> m_day;
-		}
-	}
-	if (m_month != 2 && ((m_month > 0 && m_month < 7 && m_month % 2 == 0) || (m_month > 7 && m_month <= 12 && m_month % 2 != 0)))
-	{
-		while (1 > m_day || m_day > 30)
-		{
-			cout << " - Enter day again: ";
-			cin >> m_day;
-		}
-	}
-	else if (m_month != 2 && ((m_month > 0 && m_month < 8 && m_month % 2 != 0) || (m_month > 7 && m_month <= 12 && m_month % 2 == 0)))
-	{
-		while (1 > m_day || m_day > 31)
-		{
-			cout << " - Enter day again: ";
-			cin >> m_day;
-		}
-	}
-}
+
 
 int Date::setDay()
 {
@@ -136,6 +84,60 @@ Date Date::increase_n_days(int day, int month, int year, int n)
 	k.m_month = month;
 	k.m_year = year;
 	return k;
+}
+
+void Date::input()
+{
+	cin >> m_day;
+	cin >> m_month;
+	cin >> m_year;
+	while (m_year < 0)
+	{
+		cout << " - Enter year again: ";
+		cin >> m_year;
+	}
+	while (m_month < 1 || m_month>12)
+	{
+		cout << " - Enter month again: ";
+		cin >> m_month;
+	}
+	while (m_day < 1 || m_day>31)
+	{
+		cout << " - Enter day again: ";
+		cin >> m_day;
+	}
+	if ((m_year % 4 == 0 && m_year % 400 == 0) || (m_year % 4 == 0 && m_year % 100 != 0)) // Leap year
+	{
+		while (m_month == 2 && (m_day < 1 || m_day>29))
+		{
+			cout << " - Enter day again: ";
+			cin >> m_day;
+		}
+	}
+	else if ((m_year % 4 == 0 && m_year % 100 == 0 && m_year % 400 != 0) || m_year % 4 != 0)   // Normal year
+	{
+		while (m_month == 2 && (m_day < 1 || m_day>28))
+		{
+			cout << " - Enter day again: ";
+			cin >> m_day;
+		}
+	}
+	if (m_month != 2 && ((m_month > 0 && m_month < 7 && m_month % 2 == 0) || (m_month > 7 && m_month <= 12 && m_month % 2 != 0)))
+	{
+		while (1 > m_day || m_day > 30)
+		{
+			cout << " - Enter day again: ";
+			cin >> m_day;
+		}
+	}
+	else if (m_month != 2 && ((m_month > 0 && m_month < 8 && m_month % 2 != 0) || (m_month > 7 && m_month <= 12 && m_month % 2 == 0)))
+	{
+		while (1 > m_day || m_day > 31)
+		{
+			cout << " - Enter day again: ";
+			cin >> m_day;
+		}
+	}
 }
 
 int Date::compare(Date D1)
