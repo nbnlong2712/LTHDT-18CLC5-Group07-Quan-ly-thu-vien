@@ -30,7 +30,7 @@ void Book::dateGiveBack()
 	cout << a.setDay() << "/" << a.setMonth() << "/" << a.setYear();
 }
 
-string Book::setName()
+string Book::SetName()
 {
 	string k = m_name;
 	return k;
