@@ -1,6 +1,6 @@
 #include"Librarian.h"
 
-string chuan_hoa_librarian(string k)
+string chuan_hoa_librarian(string K)
 {
 	string k1 = k;
 	for (int i = 0; i < k.size(); i++)
