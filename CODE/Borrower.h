@@ -1,8 +1,8 @@
-﻿#pragma once
+
 #include<iostream>
 #include<string>
 #include"Information.h"
-#include"Date.h"                    // không được include"Library.h" nếu không muốn bị lỗi
+#include"Date.h"                    
 #include"Book.h"
 using namespace std;
 
@@ -19,7 +19,7 @@ public:
 	Date dateExpire();
 	Date extensionDateCard();
 
-	string setName();
+	string SetName();
 	string setAddress();
 	int setCode();
 	vector<Book*>&setBorrowBook();
