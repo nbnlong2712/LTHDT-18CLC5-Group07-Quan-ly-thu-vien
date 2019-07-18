@@ -46,9 +46,8 @@ Date Borrower::extensionDateCard()
 	return this->dateExpire();
 }
 
-string Borrower::setName()
-{
-	string h = m_name;
+string Borrower::SetName()
+{	string h = m_name;
 	return h;
 }
 string Borrower::setAddress()
