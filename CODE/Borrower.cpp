@@ -1,6 +1,6 @@
 #include"Borrower.h"
 
-string chuan_hoa_borrower(string k)
+string chuan_hoa_Borrower(string k)
 {
 	string k1 = k;
 	for (int i = 0; i < k.size(); i++)
