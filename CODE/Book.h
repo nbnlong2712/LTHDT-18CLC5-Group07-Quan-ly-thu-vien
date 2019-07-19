@@ -17,7 +17,7 @@ public:
 	void dateBorrowed();
 	void dateGiveBack();
 
-	string SetName();
+	string setName();
 	string setAuthor();
 	int setCode();
 

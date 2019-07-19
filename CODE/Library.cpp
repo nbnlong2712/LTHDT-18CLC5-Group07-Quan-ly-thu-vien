@@ -3,7 +3,7 @@
 string chuan_hoa1(string k)
 {
 	string k1 = k;
-	for (int i = 0; i < k.size(); i++)
+	for (unsigned i = 0; i < k.size(); i++)
 	{
 		k1[i] = toupper(k1[i]);
 	}
@@ -35,7 +35,7 @@ vector<Book*>Library::setAddBook()
 }
 void Library::infoAllBook()
 {
-	for (int i = 0; i < m_book.size(); i++)
+	for (unsigned i = 0; i < m_book.size(); i++)
 	{
 		cout << i + 1 << ". ";
 		m_book[i]->infoBook();
@@ -45,7 +45,7 @@ void Library::infoAllBook()
 void Library::searchNameBook(string k)
 {
 	int a = 0;
-	for (int i = 0; i < m_book.size(); i++)
+	for (unsigned i = 0; i < m_book.size(); i++)
 	{
 		if (chuan_hoa1(k) == chuan_hoa1(m_book[i]->setName()))
 		{
@@ -59,7 +59,7 @@ void Library::searchNameBook(string k)
 bool Library::searchNameBook1(string k)
 {
 	int a = 0;
-	for (int i = 0; i < m_book.size(); i++)
+	for (unsigned i = 0; i < m_book.size(); i++)
 	{
 		if (chuan_hoa1(k) == chuan_hoa1(m_book[i]->setName()))
 			a = 1;
@@ -70,7 +70,7 @@ bool Library::searchNameBook1(string k)
 void Library::searchAuthorBook(string k)
 {
 	int a = 0;
-	for (int i = 0; i < m_book.size(); i++)
+	for (unsigned i = 0; i < m_book.size(); i++)
 	{
 		if (chuan_hoa1(k) == chuan_hoa1(m_book[i]->setAuthor()))
 		{
@@ -84,7 +84,7 @@ void Library::searchAuthorBook(string k)
 void Library::searchCodeBook(int k)
 {
 	int a = 0;
-	for (int i = 0; i < m_book.size(); i++)
+	for (unsigned i = 0; i < m_book.size(); i++)
 	{
 		if (k == m_book[i]->setCode())
 		{
@@ -111,7 +111,7 @@ vector<Borrower*>Library::setAddBorrower()
 }
 void Library::infoAllBorrower()
 {
-	for (int i = 0; i < m_borrower.size(); i++)
+	for (unsigned i = 0; i < m_borrower.size(); i++)
 	{
 		cout << i + 1 << ". ";
 		m_borrower[i]->infoBorrower();
@@ -121,7 +121,7 @@ void Library::infoAllBorrower()
 void Library::searchNameBorrower(string k)
 {
 	int a = 0;
-	for (int i = 0; i < m_borrower.size(); i++)
+	for (unsigned i = 0; i < m_borrower.size(); i++)
 	{
 		if (chuan_hoa1(k) == chuan_hoa1(m_borrower[i]->setName()))
 		{
@@ -135,7 +135,7 @@ void Library::searchNameBorrower(string k)
 bool Library::searchNameBorrower1(string k)
 {
 	int a = 0;
-	for (int i = 0; i < m_borrower.size(); i++)
+	for (unsigned i = 0; i < m_borrower.size(); i++)
 	{
 		if (chuan_hoa1(k) == chuan_hoa1(m_borrower[i]->setName()))
 		{
@@ -148,7 +148,7 @@ bool Library::searchNameBorrower1(string k)
 void Library::searchAddressBorrower(string k)
 {
 	int a = 0;
-	for (int i = 0; i < m_borrower.size(); i++)
+	for (unsigned i = 0; i < m_borrower.size(); i++)
 	{
 		if (chuan_hoa1(k) == chuan_hoa1(m_borrower[i]->setAddress()))
 		{
@@ -162,7 +162,7 @@ void Library::searchAddressBorrower(string k)
 void Library::searchCodeBorrower(int k)
 {
 	int a = 0;
-	for (int i = 0; i < m_borrower.size(); i++)
+	for (unsigned i = 0; i < m_borrower.size(); i++)
 	{
 		if (k == m_borrower[i]->setCode())
 		{

@@ -48,7 +48,7 @@ vector<Borrower*>&Librarian::setBorrowerLibrarian()
 
 void Librarian::deleteLibraryCard(Borrower*B)
 {
-	for (int i = 0; i < m_borrower_librarian.size(); i++)
+	for (unsigned i = 0; i < m_borrower_librarian.size(); i++)
 	{
 		if (chuan_hoa_librarian(B->setName()) == chuan_hoa_librarian(m_borrower_librarian[i]->setName()))
 		{

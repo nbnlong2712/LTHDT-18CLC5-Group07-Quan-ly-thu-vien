@@ -10,7 +10,7 @@ using namespace std;
 string chuan_hoa_main(string k)
 {
 	string k1 = k;
-	for (int i = 0; i < k.size(); i++)
+	for (unsigned i = 0; i < k.size(); i++)
 	{
 		k1[i] = toupper(k1[i]);
 	}
@@ -231,7 +231,7 @@ int main()
 		cout << "nhap sach muon tra: ";
 		getline(cin, *k);
 
-		for (int i = 0; i < L->setAddBook().size(); i++)
+		for (unsigned i = 0; i < L->setAddBook().size(); i++)
 		{
 			if (chuan_hoa_main(*k) == chuan_hoa_main(L->setAddBook()[i]->setName()))
 				K->giveBackBook(L->setAddBook()[i]);

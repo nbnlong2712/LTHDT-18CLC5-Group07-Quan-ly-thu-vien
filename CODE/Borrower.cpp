@@ -3,7 +3,7 @@
 string chuan_hoa_Borrower(string k)
 {
 	string k1 = k;
-	for (int i = 0; i < k.size(); i++)
+	for (unsigned i = 0; i < k.size(); i++)
 	{
 		k1[i] = toupper(k1[i]);
 	}
@@ -69,7 +69,7 @@ bool Borrower::borrowBook(Book*B)
 	if (m_book_borrower.size() < 5)
 	{
 		int a = 0;
-		for (int i = 0; i < m_book_borrower.size(); i++)
+		for (unsigned i = 0; i < m_book_borrower.size(); i++)
 			if (chuan_hoa_borrower(B->setName()) == chuan_hoa_borrower(m_book_borrower[i]->setName()))
 				a = 1;
 		if (a == 1)
@@ -87,7 +87,7 @@ bool Borrower::borrowBook(Book*B)
 }
 void Borrower::giveBackBook(Book*B)
 {
-	for (int i = 0; i < m_book_borrower.size(); i++)
+	for (unsigned i = 0; i < m_book_borrower.size(); i++)
 	{
 		if (chuan_hoa_borrower(B->setName()) == chuan_hoa_borrower(m_book_borrower[i]->setName()))
 		{

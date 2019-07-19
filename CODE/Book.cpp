@@ -3,7 +3,7 @@
 string chuan_hoa(string k)
 {
 	string k1 = k;
-	for (int i = 0; i < k.size(); i++)
+	for (unsigned i = 0; i < k.size(); i++)
 	{
 		k1[i] = toupper(k1[i]);
 	}
@@ -30,7 +30,7 @@ void Book::dateGiveBack()
 	cout << a.setDay() << "/" << a.setMonth() << "/" << a.setYear();
 }
 
-string Book::SetName()
+string Book::setName()
 {
 	string k = m_name;
 	return k;
