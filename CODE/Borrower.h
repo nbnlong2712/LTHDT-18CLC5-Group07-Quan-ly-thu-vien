@@ -10,7 +10,7 @@ class Borrower: public Information, Date
 {
 private:
 	vector<Book*>m_book_borrower;
-public:
+public: 
 	void inputName();
 	void inputAddress();
 	void inputCode();
@@ -28,3 +28,4 @@ public:
 
 	void infoBorrower();
 };
+ 
