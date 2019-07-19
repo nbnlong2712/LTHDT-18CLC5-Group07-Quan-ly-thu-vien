@@ -2,8 +2,8 @@
 
 string chuan_hoa_librarian(string K)
 {
-	string k1 = k;
-	for (int i = 0; i < k.size(); i++)
+	string k1 = K;
+	for (unsigned i = 0; i < K.size(); i++)
 	{
 		k1[i] = toupper(k1[i]);
 	}

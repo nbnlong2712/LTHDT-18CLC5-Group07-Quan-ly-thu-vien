@@ -70,7 +70,7 @@ bool Borrower::borrowBook(Book*B)
 	{
 		int a = 0;
 		for (unsigned i = 0; i < m_book_borrower.size(); i++)
-			if (chuan_hoa_borrower(B->setName()) == chuan_hoa_borrower(m_book_borrower[i]->setName()))
+			if (chuan_hoa_Borrower(B->setName()) == chuan_hoa_Borrower(m_book_borrower[i]->setName()))
 				a = 1;
 		if (a == 1)
 			return false;
@@ -89,7 +89,7 @@ void Borrower::giveBackBook(Book*B)
 {
 	for (unsigned i = 0; i < m_book_borrower.size(); i++)
 	{
-		if (chuan_hoa_borrower(B->setName()) == chuan_hoa_borrower(m_book_borrower[i]->setName()))
+		if (chuan_hoa_Borrower(B->setName()) == chuan_hoa_Borrower(m_book_borrower[i]->setName()))
 		{
 			m_book_borrower[i] = m_book_borrower.back();
 			m_book_borrower.pop_back();

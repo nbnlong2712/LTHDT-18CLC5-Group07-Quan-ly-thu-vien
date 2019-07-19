@@ -176,7 +176,7 @@ void Library::searchCodeBorrower(int k)
 
 void Library::infoBorrower(Borrower B1)
 {
-	for (int i = 0; i < m_borrower.size(); i++)
+	for (unsigned  i = 0; i < m_borrower.size(); i++)
 	{
 		if (chuan_hoa1(B1.setName()) == chuan_hoa1(m_borrower[i]->setName()))
 		{
@@ -184,7 +184,7 @@ void Library::infoBorrower(Borrower B1)
 			cout << endl;
 			if (B1.setBorrowBook().size() != 0)
 			{
-				for (int j = 0; j < B1.setBorrowBook().size(); j++)
+				for (unsigned  j = 0; j < B1.setBorrowBook().size(); j++)
 				{
 					cout << j + 1 << "." << B1.setBorrowBook()[j]->setName() << endl;
 				}
