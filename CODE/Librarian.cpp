@@ -1,11 +1,11 @@
-#include"Librarian.h"
+﻿#include"Librarian.h"
 
-string chuan_hoa_librarian(string K)
+string chuan_hoa_librarian(string k)     // chuyển tất cả ký tự chuỗi k thành chữ thường
 {
-	string k1 = K;
-	for (unsigned i = 0; i < K.size(); i++)
+	string k1 = k;
+	for (int i = 0; i < k.size(); i++)
 	{
-		k1[i] = toupper(k1[i]);
+		k1[i] = tolower(k1[i]);
 	}
 	return k1;
 }
@@ -19,14 +19,15 @@ void Librarian::inputAddress()
 }
 void Librarian::inputContract()
 {
-	cout << "Enter date start contract: ";
+	cout << "Nhap ngay bat dau hop dong: ";
 	Date::input();
 }
 void Librarian::intputSalary()
 {
-	cout << "Enter salary: ";
+	cout << "Nhap tien luong: ";
 	cin >> m_salary;
 }
+
 Date Librarian::extensionContract()
 {
 	int n = 180;
@@ -40,31 +41,68 @@ void Librarian::inputInfo()
 	this->intputSalary();
 	this->inputContract();
 }
-vector<Borrower*>&Librarian::setBorrowerLibrarian()
+
+string Librarian::setName()
 {
-	return m_borrower_librarian;
+	return m_name;
+}
+string Librarian::setAddress()
+{
+	return m_adr;
+}
+double Librarian::setSalary()
+{
+	return m_salary;
+}
+string &Librarian::setName2(string k)
+{
+	m_name = k;
+	return m_name;
+}
+string &Librarian::setAddress2(string k)
+{
+	m_adr = k;
+	return m_adr;
+}
+double &Librarian::setSalary2(int k)
+{
+	m_salary = k;
+	return m_salary;
+}
+int Librarian::setDay()
+{
+	return m_day;
+}
+int Librarian::setMonth()
+{
+	return m_month;
+}
+int Librarian::setYear()
+{
+	return m_year;
+}
+int &Librarian::setDay2(int k)
+{
+	m_day = k;
+	return m_day;
+}
+int &Librarian::setMonth2(int k)
+{
+	m_month = k;
+	return m_month;
+}
+int &Librarian::setYear2(int k)
+{
+	m_year = k;
+	return m_year;
 }
 
-
-void Librarian::deleteLibraryCard(Borrower*B)
+void Librarian::infoLibrarian()
 {
-	for (unsigned i = 0; i < m_borrower_librarian.size(); i++)
-	{
-		if (chuan_hoa_librarian(B->setName()) == chuan_hoa_librarian(m_borrower_librarian[i]->setName()))
-		{
-			m_borrower_librarian[i] = m_borrower_librarian.back();
-			m_borrower_librarian.pop_back();
-		}
-	}
-}
-
-void Librarian::info()
-{
-	cout << "-Name: " << m_name << endl;
-	cout << "-Adrress: " << m_adr << endl;
-	cout << endl;
-	cout << "-Salary: " << m_salary << endl;
-	cout << "-Start contract: ";
+	cout << "-Ten: " << m_name << endl;
+	cout << "-Dia chi: " << m_adr << endl;
+	cout << "-Luong: " << m_salary << endl;
+	cout << "-Bat dau hop dong: ";
 	this->output();
-	cout << "-End contract: " << this->extensionContract().setDay() << "/" << this->extensionContract().setMonth() << "/" << this->extensionContract().setYear();
+	cout << "-Ket thuc hop dong: " << this->extensionContract().setDay() << "/" << this->extensionContract().setMonth() << "/" << this->extensionContract().setYear();
 }

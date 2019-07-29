@@ -2,21 +2,31 @@
 
 void Information::inputName()
 {
-	cout << "Enter name: ";
+	cout << "Nhap ten: ";
 	getline(cin, m_name);
+	while (m_name.size() == 0)
+	{
+		cout << "-Khong co ky tu nao! Nhap lai: ";
+		getline(cin, m_name);
+	}
 }
 void Information::inputAddress()
 {
-	cout << "Enter address: ";
+	cout << "Nhap dia chi: ";
 	getline(cin, m_adr);
+	while (m_adr.size() == 0)
+	{
+		cout << "-Khong co ky tu nao! Nhap lai: ";
+		getline(cin, m_adr);
+	}
 }
 void Information::inputCode()
 {
-	cout << "Enter code: ";
+	cout << "Nhap ma so: ";
 	cin >> m_code;
 	while (m_code < 0 || m_code>99999)
 	{
-		cout << "Invalid! Enter again code: ";
+		cout << "Khong hop le! Nhap lai ma so: ";
 		cin >> m_code;
 	}
 }
