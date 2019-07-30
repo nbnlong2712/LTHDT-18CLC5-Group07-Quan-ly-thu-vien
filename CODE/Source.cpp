@@ -7,11 +7,12 @@
 #include<conio.h>
 using namespace std;
 #include<iomanip>
+#include <conio.h>
 
 string chuan_hoa_main(string k)
 {
 	string k1 = k;
-	for (int i = 0; i < k.size(); i++)
+	for (unsigned i = 0; i < k.size(); i++)
 	{
 		k1[i] = tolower(k1[i]);
 	}
@@ -20,11 +21,11 @@ string chuan_hoa_main(string k)
 string viet_hoa(string k)
 {
 	string k1 = k;
-	for (int i = 0; i < k.size(); i++)
+	for (unsigned i = 0; i < k.size(); i++)
 	{
 		k1[i] = toupper(k1[i]);
 	}
-	return k1;
+	return k1; 
 }
 
 //	KHI MƯỢN SÁCH HOẶC XÓA ĐỌC GIẢ THÌ CẦN GỌI HÀM CẬP NHẬT SỐ LƯỢNG RA FILE
@@ -34,7 +35,7 @@ int main()
 	cout << std::setprecision(15);
 	Library*L = new Library;
 	L->CapNhat_Library();                                 // cập nhật lại những gì người dùng đã làm trong lần sử dụng trước
-	for (int i = 0; i < L->setLib().size(); i++)
+	for (unsigned i = 0; i < L->setLib().size(); i++)
 	{
 		L->setLib()[i]->CapNhat_Book();
 		L->setLib()[i]->CapNhat_Borrower();
@@ -45,10 +46,10 @@ int main()
 
 	int page = 0;
 	int luachon = 1;
-	int luachon_tv;                                       // xử lý lựa chọn trong trang 0 - trang thư viện
-	int luachon_sach;                                     // xử lý lựa chọn trong trang sách
-	int luachon_docgia;                                   // xử lý lựa chọn trong trang đọc giả
-	int luachon_thuthu;                                   // xử lý lựa chọn trong trang thủ thư
+	int luachon_tv = 0;                                       // xử lý lựa chọn trong trang 0 - trang thư viện
+	int luachon_sach = 0;                                     // xử lý lựa chọn trong trang sách
+	int luachon_docgia = 0;                                   // xử lý lựa chọn trong trang đọc giả
+	int luachon_thuthu = 0;                                   // xử lý lựa chọn trong trang thủ thư
 														  // (có thể chưa đúng và bị sửa đổi sau này)
 	while (luachon == 1)
 	{
@@ -136,7 +137,7 @@ int main()
 				int linh = 1;
 				while (linh == 1)
 				{
-					for (int i = 0; i < L->setLib().size(); i++)
+					for (unsigned i = 0; i < L->setLib().size(); i++)
 					{
 						if (chuan_hoa_main(k2) == chuan_hoa_main(L->setLib()[i]->setName()))
 						{
@@ -340,7 +341,7 @@ int main()
 			int linh8 = 0;
 			while (linh8 == 0)
 			{
-				for (int i = 0; i < lib->setAddBook().size(); i++)
+				for (unsigned i = 0; i < lib->setAddBook().size(); i++)
 				{
 					if (chuan_hoa_main(k8) == chuan_hoa_main(lib->setAddBook()[i]->setName()))
 					{
@@ -438,7 +439,7 @@ int main()
 			{
 				lib->setLibrarian().infoLibrarian();
 				cout << endl << "====================" << endl;
-				cout << " Ban co muon thay nhan vien thu thu moi khong? (1: CO \ 0: KHONG): ";
+				cout << " Ban co muon thay nhan vien thu thu moi khong? (1: CO | 0: KHONG): ";
 				string luachon10_1;
 				getline(cin, luachon10_1);
 				if (luachon10_1 != "1" && luachon10_1 != "0")
@@ -523,7 +524,7 @@ int main()
 			int linh12 = 0;
 			while (linh12 == 0)
 			{
-				for (int i = 0; i < lib->setAddBorrower().size(); i++)
+				for (unsigned i = 0; i < lib->setAddBorrower().size(); i++)
 				{
 					if (masothe12 == lib->setAddBorrower()[i]->setCode())
 					{
@@ -603,13 +604,13 @@ int main()
 			cout << ">>> MUON SACH" << endl << endl;
 			cout << "-> Nhap ma so doc gia muon muon sach: ";
 			int masothe14;
-			cin >> masothe14;
+			cin >> masothe14; 
 			int size_1, linh14_2 = 0;
 			int linh14 = 0;
 			int linh14_1 = 0;
 			while (linh14 == 0)
 			{
-				for (int i = 0; i < lib->setAddBorrower().size(); i++)
+				for (unsigned i = 0; i < lib->setAddBorrower().size(); i++)
 				{
 					if (masothe14 == lib->setAddBorrower()[i]->setCode())
 					{
@@ -621,7 +622,7 @@ int main()
 						linh14_1 = 0;
 						while (linh14_1 == 0)
 						{
-							for (int j = 0; j < lib->setAddBook().size(); j++)
+							for (unsigned j = 0; j	 < lib->setAddBook().size(); j++)
 							{
 								if (chuan_hoa_main(k14) == chuan_hoa_main(lib->setAddBook()[j]->setName()))
 								{
@@ -687,7 +688,7 @@ int main()
 			int linh15_1 = 0;
 			while (linh15 == 0)
 			{
-				for (int i = 0; i < lib->setAddBorrower().size(); i++)
+				for (unsigned i = 0; i < lib->setAddBorrower().size(); i++)
 				{
 					if (masothe15 == lib->setAddBorrower()[i]->setCode())
 					{
@@ -706,7 +707,7 @@ int main()
 						linh15_1 = 0;
 						while (linh15_1 == 0)
 						{
-							for (int j = 0; j < lib->setAddBorrower()[i]->setBorrowBook().size(); j++)
+							for (unsigned j = 0; j < lib->setAddBorrower()[i]->setBorrowBook().size(); j++)
 							{
 								if (chuan_hoa_main(k15) == chuan_hoa_main(lib->setAddBorrower()[i]->setBorrowBook()[j]->setName()))
 								{
@@ -1162,7 +1163,7 @@ int main()
 				int linh27 = 0;
 				while (linh27 == 0)
 				{
-					for (int i = 0; i < lib->setAddBorrower().size(); i++)
+					for (unsigned i = 0; i < lib->setAddBorrower().size(); i++)
 					{
 						if (masothe27 == lib->setAddBorrower()[i]->setCode())
 						{
