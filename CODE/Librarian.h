@@ -24,7 +24,7 @@ public:
 	double setSalary();
 	string &setName2(string);
 	string &setAddress2(string);
-	double &setSalary2(int);
+	double &setSalary2(double);
 	
 	int setDay();
 	int setMonth();

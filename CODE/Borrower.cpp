@@ -3,7 +3,7 @@
 string chuan_hoa_borrower(string k)
 {
 	string k1 = k;
-	for (int i = 0; i < k.size(); i++)
+	for (unsigned i = 0; i < k.size(); i++)
 	{
 		k1[i] = tolower(k1[i]);
 	}
@@ -96,7 +96,7 @@ void Borrower::borrowBook(Book*B)                            // mượn sách
 	if (m_book_borrower.size() < 10)                   // số sách mượn không được vượt quá 10 cuốn
 	{
 		int a = 0;
-		for (int i = 0; i < m_book_borrower.size(); i++)
+		for (unsigned i = 0; i < m_book_borrower.size(); i++)
 			if (chuan_hoa_borrower(B->setName()) == chuan_hoa_borrower(m_book_borrower[i]->setName()))
 				a = 1;
 		if (a == 1)
@@ -139,7 +139,7 @@ void Borrower::giveBackBook(Book*B)                             //trả sách
 		cout << endl << " (Khong co sach)" << endl;
 	else 
 	{
-		for (int i = 0; i < m_book_borrower.size(); i++)
+		for (unsigned i = 0; i < m_book_borrower.size(); i++)
 		{
 			if (chuan_hoa_borrower(B->setName()) == chuan_hoa_borrower(m_book_borrower[i]->setName()))
 			{
@@ -161,7 +161,7 @@ void Borrower::giveBackBook(Book*B)                             //trả sách
 		string k1 = to_string(m_code);
 		k1 += ".txt";
 		fstream fs(k1, ios::out);
-		for (int i = 0; i < m_book_borrower.size(); i++)        // ghi lại tất cả sách ra file 
+		for (unsigned i = 0; i < m_book_borrower.size(); i++)        // ghi lại tất cả sách ra file 
 		{
 			if (i == 0)
 			{

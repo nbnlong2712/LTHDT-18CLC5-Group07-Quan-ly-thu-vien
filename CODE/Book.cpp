@@ -3,7 +3,7 @@
 string chuan_hoa(string k)         // chuyển tất cả ký tự chuỗi k thành chữ thường
 {
 	string k1 = k;
-	for (int i = 0; i < k.size(); i++)
+	for (unsigned i = 0; i < k.size(); i++)
 	{
 		k1[i] = tolower(k1[i]);
 	}

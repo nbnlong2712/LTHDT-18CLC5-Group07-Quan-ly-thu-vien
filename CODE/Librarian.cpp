@@ -3,7 +3,7 @@
 string chuan_hoa_librarian(string k)     // chuyển tất cả ký tự chuỗi k thành chữ thường
 {
 	string k1 = k;
-	for (int i = 0; i < k.size(); i++)
+	for (unsigned i = 0; i < k.size(); i++)
 	{
 		k1[i] = tolower(k1[i]);
 	}
@@ -64,7 +64,7 @@ string &Librarian::setAddress2(string k)
 	m_adr = k;
 	return m_adr;
 }
-double &Librarian::setSalary2(int k)
+double &Librarian::setSalary2(double k)
 {
 	m_salary = k;
 	return m_salary;

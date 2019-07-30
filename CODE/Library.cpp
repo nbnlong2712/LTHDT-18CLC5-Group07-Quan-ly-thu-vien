@@ -5,7 +5,7 @@
 string chuan_hoa1(string k)
 {
 	string k1 = k;
-	for (int i = 0; i < k.size(); i++)
+	for (unsigned i = 0; i < k.size(); i++)
 	{
 		k1[i] = tolower(k1[i]);
 	}
@@ -63,7 +63,7 @@ void Library::addLibrary()
 	while (a == 0)
 	{
 		a = 1;
-		for (int i = 0; i < m_library.size(); i++)
+		for (unsigned i = 0; i < m_library.size(); i++)
 		{
 			if ((chuan_hoa1(L->setName()) == chuan_hoa1(m_library[i]->setName())) || (L->setName().size() <= 1)) // check trùng tên 
 				a = 0;                                                                                           // hoặc tên không có ký tự
@@ -80,7 +80,7 @@ void Library::addLibrary()
 	while (b == 0)
 	{
 		b = 1;
-		for (int i = 0; i < m_library.size(); i++)
+		for (unsigned i = 0; i < m_library.size(); i++)
 		{
 			if (L->setMaso() == m_library[i]->setMaso())          // check trùng mã số thư viện
 				b = 0;
@@ -125,7 +125,7 @@ vector<Library*>&Library::setLib()          // = setAddLibrary();
 }
 void Library::infoLibrary()
 {
-	for (int i = 0; i < m_library.size(); i++)
+	for (unsigned i = 0; i < m_library.size(); i++)
 	{
 		cout << i + 1 << "." << m_library[i]->setName() << endl;
 		cout << " - Ma so thu vien: " << m_library[i]->setMaso() << endl << endl;
@@ -215,7 +215,7 @@ vector<Book*>Library::addBook()   //  thêm sách mới vào thư viện
 	while (b == 0)
 	{
 		b = 1;
-		for (int i = 0; i < m_book.size(); i++)                     // check tên sách chống trùng lặp
+		for (unsigned i = 0; i < m_book.size(); i++)                     // check tên sách chống trùng lặp
 		{
 			if (chuan_hoa1(p->setName()) == chuan_hoa1(m_book[i]->setName()))
 				b = 0;
@@ -233,7 +233,7 @@ vector<Book*>Library::addBook()   //  thêm sách mới vào thư viện
 	while (a == 0)
 	{
 		a = 1;
-		for (int i = 0; i < m_book.size(); i++)
+		for (unsigned i = 0; i < m_book.size(); i++)
 		{
 			if (p->setCode() == m_book[i]->setCode())                //check mã code chống trùng lặp
 				a = 0;
@@ -275,7 +275,7 @@ void Library::infoAllBook()
 		cout << endl << "   (Khong co sach)" << endl;
 	else 
 	{
-		for (int i = 0; i < m_book.size(); i++)
+		for (unsigned i = 0; i < m_book.size(); i++)
 		{
 			cout << i + 1 << ". ";
 			m_book[i]->infoBook();
@@ -286,7 +286,7 @@ void Library::infoAllBook()
 void Library::searchNameBook(string k)
 {
 	int a = 0;
-	for (int i = 0; i < m_book.size(); i++)
+	for (unsigned i = 0; i < m_book.size(); i++)
 	{
 		if ((chuan_hoa1(m_book[i]->setName())).find(chuan_hoa1(k)) <= (m_book[i]->setName().size()))
 		{
@@ -302,7 +302,7 @@ void Library::searchNameBook(string k)
 void Library::searchAuthorBook(string k)
 {
 	int a = 0;
-	for (int i = 0; i < m_book.size(); i++)
+	for (unsigned i = 0; i < m_book.size(); i++)
 	{
 		if (chuan_hoa1(m_book[i]->setAuthor()).find(chuan_hoa1(k)) <= m_book[i]->setAuthor().size())
 		{
@@ -318,7 +318,7 @@ void Library::searchAuthorBook(string k)
 void Library::searchCodeBook(int k)
 {
 	int a = 0;
-	for (int i = 0; i < m_book.size(); i++)
+	for (unsigned i = 0; i < m_book.size(); i++)
 	{
 		if (((to_string(m_book[i]->setCode())).find(to_string(k))) <= (to_string(m_book[i]->setCode()).size()))
 		{
@@ -335,7 +335,7 @@ void Library::GhiSLSach()
 {
 	string k1 = m_name + "BookAmounts.txt";
 	fstream fs(k1, ios::out);
-	for (int i = 0; i < m_book.size(); i++)
+	for (unsigned i = 0; i < m_book.size(); i++)
 	{
 		if (i == 0)
 		{
@@ -365,7 +365,7 @@ vector<Borrower*>Library::addBorrower()        // xử lý file
 		k3 = k1 + k2;                                          // đúng với 
 		code = stoi(k3);                                       // thư viện đó
 		p->setCode2(code);                                     // mã số mới = mã thư viện + mã số cũ
-		for (int i = 0; i < m_borrower.size(); i++)
+		for (unsigned i = 0; i < m_borrower.size(); i++)
 		{
 			if (p->setCode() == m_borrower[i]->setCode())      // check mã số chống trùng   
 				a = 0;
@@ -450,7 +450,7 @@ void Library::CapNhat_Borrower()
 		}
 		F1.close();
 	}
-	for (int i = 0; i < m_borrower.size(); i++)                 // lấy thông tin từng đọc giả (sách mượn, ngày mượn)
+	for (unsigned i = 0; i < m_borrower.size(); i++)                 // lấy thông tin từng đọc giả (sách mượn, ngày mượn)
 	{
 		string*maso = new string;
 		*maso = to_string(m_borrower[i]->setCode());
@@ -501,7 +501,7 @@ vector<Borrower*>&Library::setAddBorrower()
 }
 void Library::infoAllBorrower()
 {
-	for (int i = 0; i < m_borrower.size(); i++)
+	for (unsigned i = 0; i < m_borrower.size(); i++)
 	{
 		cout << i + 1 << ". ";
 		m_borrower[i]->infoBorrower();
@@ -511,7 +511,7 @@ void Library::infoAllBorrower()
 void Library::searchNameBorrower(string k)
 {
 	int a = 0;
-	for (int i = 0; i < m_borrower.size(); i++)
+	for (unsigned i = 0; i < m_borrower.size(); i++)
 	{
 		if ((chuan_hoa1(m_borrower[i]->setName())).find(chuan_hoa1(k)) <= (m_borrower[i]->setName().size()))
 		{
@@ -527,7 +527,7 @@ void Library::searchNameBorrower(string k)
 void Library::searchAddressBorrower(string k)
 {
 	int a = 0;
-	for (int i = 0; i < m_borrower.size(); i++)
+	for (unsigned i = 0; i < m_borrower.size(); i++)
 	{
 		if ((chuan_hoa1(m_borrower[i]->setAddress())).find(chuan_hoa1(k)) <= (m_borrower[i]->setAddress().size()))
 		{
@@ -543,7 +543,7 @@ void Library::searchAddressBorrower(string k)
 void Library::searchCodeBorrower(int k)
 {
 	int a = 0;
-	for (int i = 0; i < m_borrower.size(); i++)
+	for (unsigned i = 0; i < m_borrower.size(); i++)
 	{
 		if (((to_string(m_borrower[i]->setCode())).find(to_string(k))) <= (to_string(m_borrower[i]->setCode()).size()))
 		{
@@ -558,7 +558,7 @@ void Library::searchCodeBorrower(int k)
 }
 void Library::infoBorrower(Borrower B1)
 {
-	for (int i = 0; i < m_borrower.size(); i++)
+	for (unsigned i = 0; i < m_borrower.size(); i++)
 	{
 		if ((chuan_hoa1(B1.setName()) == chuan_hoa1(m_borrower[i]->setName())) && (B1.setCode() == m_borrower[i]->setCode()))
 		{
@@ -567,7 +567,7 @@ void Library::infoBorrower(Borrower B1)
 
 			if (B1.setBorrowBook().size() != 0)
 			{
-				for (int j = 0; j < B1.setBorrowBook().size(); j++)
+				for (unsigned j = 0; j < B1.setBorrowBook().size(); j++)
 				{
 					cout << j + 1 << "." << B1.setBorrowBook()[j]->setName() << endl;
 					cout << " -Ngay muon: " << B1.setBorrowBook()[j]->setDay() << "/" << B1.setBorrowBook()[j]->setMonth() << "/" << B1.setBorrowBook()[j]->setYear() << endl;
@@ -584,11 +584,11 @@ void Library::deleteLibraryCard(Borrower*B)
 {
 	string k = to_string(B->setCode());
 	k += ".txt";
-	for (int i = 0; i < m_borrower.size(); i++)
+	for (unsigned i = 0; i < m_borrower.size(); i++)
 	{
 		if (B->setCode() == m_borrower[i]->setCode())
 		{
-			for (int i = 0; i < B->setBorrowBook().size(); i++)
+			for (unsigned i = 0; i < B->setBorrowBook().size(); i++)
 			{
 				B->setBorrowBook()[i]->setSoLuong()++;
 				B->setBorrowBook()[i]->setSoLuong2(B->setBorrowBook()[i]->setSoLuong());
@@ -603,7 +603,7 @@ void Library::deleteLibraryCard(Borrower*B)
 	{
 		string k1 = m_name + "Borrower.txt";          // ghi lại thông tin tất cả đọc giả ra file
 		fstream FS(k1, ios::out);
-		for (int i = 0; i < m_borrower.size(); i++)
+		for (unsigned i = 0; i < m_borrower.size(); i++)
 		{
 			if (i == 0)
 				FS << m_borrower[i]->setName() << "," << m_borrower[i]->setAddress() << "," << m_borrower[i]->setCode() << "," << m_borrower[i]->setDay() << "/" << m_borrower[i]->setMonth() << "/" << m_borrower[i]->setYear();
