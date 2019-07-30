@@ -28,7 +28,7 @@ public:
 	string &setAuthor2(string);
 	int &setCode2(int);
 	int &setSoLuong2(int);
-	
+	 
 	int setDay();
 	int setMonth();
 	int setYear();

@@ -29,6 +29,7 @@ public:
 	int setMaso();
 	int &setMaso2(int);                       // mã số nhỏ hơn 99
 	string &setName2(string);
+	void deleteLibrary(Library*);                     // xử lý file
 //========BOOK========//
 	void CapNhat_Book();                      // Lấy từ file vào
 	void GhiSLSach();                         // Ghi lại số lượng sách mới sau khi có người mượn sách ra file

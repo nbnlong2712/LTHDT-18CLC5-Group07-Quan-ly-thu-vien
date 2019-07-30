@@ -150,6 +150,42 @@ string &Library::setName2(string k)              // Để lưu chuỗi được 
 	return m_name;
 }
 
+void Library::deleteLibrary(Library*L)
+{
+	for (unsigned i = 0; i < m_library.size(); i++)
+	{
+		if (L->setMaso() == m_library[i]->setMaso())
+		{
+			remove((L->setName() + "Book.txt").c_str());
+			remove((L->setName() + "BookAmounts.txt").c_str());
+			remove((L->setName() + "Borrower.txt").c_str());
+			remove((L->setName() + "Librarian.txt").c_str());
+			for (unsigned j = 0; j < L->setAddBorrower().size(); j++)
+			{
+				string k;
+				k = to_string(L->setAddBorrower()[j]->setCode());
+				k += ".txt";
+				remove(k.c_str());
+			}
+			m_library[i] = m_library.back();
+			m_library.pop_back();
+		}
+	}
+	fstream fs("Library.txt", ios::out);
+	for (unsigned i = 0; i < m_library.size(); i++)
+	{
+		if (i == 0)
+		{
+			fs << m_library[i]->setName() << "," << m_library[i]->setMaso();
+		}
+		else
+		{
+			fs << endl << m_library[i]->setName() << "," << m_library[i]->setMaso();
+		}
+	}
+	fs.close();
+}
+
 //========BOOK========//
 
 void Library::CapNhat_Book()
