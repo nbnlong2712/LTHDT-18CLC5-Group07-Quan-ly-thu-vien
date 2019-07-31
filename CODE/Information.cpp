@@ -1,6 +1,6 @@
-#include"Information.h"
+﻿#include"Information.h"
 
-void Information::inputName()
+void Information::inputName()             // Nhập tên
 {
 	cout << "Nhap ten: ";
 	getline(cin, m_name);
@@ -10,7 +10,7 @@ void Information::inputName()
 		getline(cin, m_name);
 	}
 }
-void Information::inputAddress()
+void Information::inputAddress()          // Nhập địa chỉ
 {
 	cout << "Nhap dia chi: ";
 	getline(cin, m_adr);
@@ -20,8 +20,8 @@ void Information::inputAddress()
 		getline(cin, m_adr);
 	}
 }
-void Information::inputCode()
-{
+void Information::inputCode()            // Nhập mã số
+{   
 	cout << "Nhap ma so: ";
 	cin >> m_code;
 	while (m_code < 0 || m_code>99999)

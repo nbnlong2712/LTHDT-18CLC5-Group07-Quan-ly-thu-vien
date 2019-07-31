@@ -17,8 +17,8 @@ public:
 	void inputCode();
 	void inputInfo();
 	
-	void dateBorrowed();        // nhập ngày, tháng, năm mượn sách (dùng cho Borrower)
-	void dateGiveBack();        // xuất ra ngày, tháng, năm trả sách (dùng cho Borrower)
+	void dateBorrowed();        // nhập ngày, tháng, năm mượn sách (cho Borrower)
+	void dateGiveBack();        // xuất ngày, tháng, năm trả sách (cho Borrower)
 
 	string setName();
 	string setAuthor();
@@ -28,7 +28,7 @@ public:
 	string &setAuthor2(string);
 	int &setCode2(int);
 	int &setSoLuong2(int);
-	 
+	
 	int setDay();
 	int setMonth();
 	int setYear();

@@ -3,7 +3,7 @@
 string chuan_hoa(string k)         // chuyển tất cả ký tự chuỗi k thành chữ thường
 {
 	string k1 = k;
-	for (unsigned i = 0; i < k.size(); i++)
+	for (int i = 0; i < k.size(); i++)
 	{
 		k1[i] = tolower(k1[i]);
 	}
@@ -14,7 +14,7 @@ void Book::inputName()
 {
 	cout << "Nhap ten sach: ";
 	getline(cin, m_name);
-	while (m_name.size() == 0)               // nếu nhập vào m_name rỗng, thì bắt nhập lại
+	while (m_name.size() == 0)               // nếu nhập vào m_name rỗng, thì bắt nhập lại từ đầu
 	{
 		cout << "-Khong co ky tu nao! Nhap lai: ";
 		getline(cin, m_name);
@@ -30,7 +30,7 @@ void Book::inputInfo()
 		getline(cin, m_author);
 	}
 	
-	cout << "Nhap so luong sach: ";            // số lượng nếu vượt quá 9999 thì bắt nhập lại (quá nhiều)
+	cout << "Nhap so luong sach: ";            // số lượng nếu vượt quá 9999 thì bắt nhập lại (số lượng quá nhiều)
 	cin >> m_soluong;
 	while (m_soluong < 0 || m_soluong>9999)
 	{
@@ -42,7 +42,7 @@ void Book::inputCode()
 {
 	cout << "Nhap ma sach: ";
 	cin >> m_code;
-	while (m_code < 1000 || m_code>99999)
+	while (m_code < 1000 || m_code>99999)       // nhập mã số sách
 	{
 		cout << "Khong hop le! Nhap lai ma so: ";
 		cin >> m_code;
