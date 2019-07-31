@@ -14,5 +14,4 @@ public:
 	int setMonth();
 	int setYear();
 	Date increase_n_days(int day, int month, int year, int n);
-	int compare(Date);
 };

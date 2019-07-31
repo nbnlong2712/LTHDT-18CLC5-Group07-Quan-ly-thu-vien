@@ -135,26 +135,3 @@ Date Date::increase_n_days(int day, int month, int year, int n)
 	return k;
 }
 
-int Date::compare(Date D1)
-{
-	if (m_year > D1.m_year)
-		return 1;
-	else if (m_year < D1.m_year)
-		return -1;
-	else if (m_year == D1.m_year)
-	{
-		if (m_month > D1.m_month)
-			return 1;
-		else if (m_month < D1.m_month)
-			return -1;
-		else if (m_month == D1.m_month)
-		{
-			if (m_day > D1.m_day)
-				return 1;
-			else if (m_day < D1.m_day)
-				return -1;
-			else if (m_day == D1.m_day)
-				return 0;
-		}
-	}
-}
