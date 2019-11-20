@@ -1,7 +1,7 @@
 Phân công công việc:
 1. Nguyễn Bá Nhật Long:
--Viết class Library, Borrower, hàm main().
+-Làm hết
 2. Nguyễn Đình Thảo: 
-- Viết hàm xóa thư viện, Librarian, vẽ class diagram.
+- Làm màu
 3. Lê Thanh Sơn: 
-- Viết class Book, Infomartion. 
+- Đéo làm con cak gì hết
