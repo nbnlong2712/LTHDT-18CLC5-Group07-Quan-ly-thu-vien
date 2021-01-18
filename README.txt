@@ -4,4 +4,4 @@ Phân công công việc:
 2. Nguyễn Đình Thảo: 
 - Làm màu
 3. Lê Thanh Sơn: 
-- Đéo làm con cak gì hết
+- Làm thinh
